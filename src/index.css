@@ -1,13 +1,85 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+
+
+
+/* Custom CSS to Override Bootstrap */
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+.sora{
+  font-family: 'Sora', sans-serif !important;
+}
+.bg-dark-pro{
+  background-color: #0C1E2A;
+}
+.bg-light-pro{
+  background-color: #fff3f3;
+}
+.btn-main{
+  background-color: #FF6E6D;
+  transition-duration: .2s;
+  color: white;
+}
+.btn-main:hover{
+  background-color: #FF6E6D;
+  color: white;
+}
+.btn-outline-main{
+  color: #FF6E6D;
+  border: 1px solid #FF6E6D;
+  transition-duration: .2s;
+}
+.btn-outline-main:hover{
+  background-color: #FF6E6D;
+  color: white;
+}
+.text-main{
+  color: #FF6E6D !important;
+}
+.text-second{
+  color: #858585;
+}
+.border-main{
+  border-color: #FF6E6D !important;
+}
+.rounded-20{
+  border-radius: 20px;
+}
+.rounded-t-20{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.rounded-10{
+  border-radius: 10px;
+}
+.rounded-t-10{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.box:hover{
+  box-shadow: 5px 5px 15px #949494 !important;
+  transition-duration: .2s;
+}
+.foo-hover:hover{
+  color: white;
+}
+.ico:hover{
+  color: #FF6E6D !important;
+}
+.pointer{
+  cursor: pointer;
+}
+.mh-5{
+  min-height: 500px;
 }
