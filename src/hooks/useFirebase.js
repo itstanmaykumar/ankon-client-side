@@ -88,7 +88,7 @@ const useFirebase = () => {
             )
     }
 
-    const [admin, setAdmin] = useState(false);
+    const [admin, setAdmin] = useState({});
 
     useEffect(() => {
         fetch(`https://serene-badlands-47415.herokuapp.com/users?email=${user?.email}`)
@@ -96,7 +96,6 @@ const useFirebase = () => {
             .then(data => setAdmin(data))
     }, []);
 
-    console.log(admin);
     const isAdmin = admin;
 
     return {

@@ -11,7 +11,8 @@ const ShowReview = () => {
     }, []);
 
     return (
-        <div>
+        <div className="container">
+            <h2 className="text-center">What O<span className="border-bottom border-main border-3">ur Clients Say About</span> Us?</h2>
             <div>
                 <div id="carouselExampleIndicators" className="my-5 col-md-10 mx-auto bg-dark-pro rounded-20 shadow-lg carousel slide carousel-fade" data-bs-ride="carousel">
                     <div className="carousel-indicators">

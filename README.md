@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# ankon Project Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site Link: https://ankon-e942d.web.app/
 
-## Available Scripts
+## Project Description in Brief
 
-In the project directory, you can run:
+It's a website where you find diffrent package paintings which you can buy.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Some Features Of This Project
 
-### `npm test`
+### `Sign In`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can sign in with google account.
 
-### `npm run build`
+### `Sign Up`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can sign up with google account.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `About`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can see see the information about pintrip here.
 
-### `npm run eject`
+### `Book Trips`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You can book trips as your likings.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Admin`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Here you can control all the bookings of all users and you also can add new trip packages here. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Programming Features Of This Project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `Firbase Authorization`
 
-### Code Splitting
+This project has the feature of firebase authorization.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### `Database`
 
-### Analyzing the Bundle Size
+Mongodb was used to keep the data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### `Route`
 
-### Making a Progressive Web App
+This project was based on React Route System. Private route were used to protect some page. That means you can only see those page if you are logged in.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `Heroku`
 
-### Advanced Configuration
+The server side was hosted in Heroku.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### `Responsiveness`
 
-### Deployment
+This site is completely responsive as it was created with Bootstrap (a CSS framework).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `Deployment`
 
-### `npm run build` fails to minify
+This site was deployed on Firebase. The live site link is provided on the top of this file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Programming Languages In This Project
+
+### `Node`
+
+Node was used in this project.
+
+### `Express`
+
+Express Js was used in this project.
+
+### `React`
+
+React JS was used in this project.
+
+### `HTML`
+
+HTML was partially used here.
+
+### `Bootstrap`
+
+Bootstrap was used to style the site and to make it responsive. 
+
+### `CSS`
+
+Some CSS styles were used in the project! (mainly for the primary theme color of the website).
+
+
+**Thank You For Your Time. Have A Nice Day**
