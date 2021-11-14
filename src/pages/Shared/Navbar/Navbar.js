@@ -37,7 +37,7 @@ const Navbar = () => {
                                     <Link className="nav-link text-main" to="/dashboard">Dashboard</Link>
                                 </li>
                             }
-                            <li className="me-5 pe-3"></li>
+                            <li className="me-5"></li>
                             {user?.email ? (
                                 <li className="nav-item" onClick={signOutUser}>
                                     <Link className="btn btn-outline-main" to="/home">

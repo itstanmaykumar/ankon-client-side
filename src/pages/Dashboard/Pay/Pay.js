@@ -8,7 +8,7 @@ const Pay = () => {
         <div className="container">
             <div className="row">
                 <DashNav></DashNav>
-                <div className="col-lg-9">
+                <div className="col-lg-8">
                     <div className="ms-3 mt-3 container">
                         <div className="row align-items-center justify-content-between">
                             <div className="col-lg-6 col-sm-8 mx-auto">

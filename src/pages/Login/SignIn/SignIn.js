@@ -5,7 +5,7 @@ import signin from '../../../img/signin.png';
 
 const SignIn = () => {
     const [signinData, setSigninData] = useState({});
-    const { user, signInUser, isLoading, authError } = useAuth();
+    const { user, signInUser, signInWithGoogle, isLoading, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -16,12 +16,15 @@ const SignIn = () => {
         const newSigninData = { ...signinData };
         newSigninData[field] = value;
         setSigninData(newSigninData);
-        console.log(newSigninData);
     }
 
     const handleSigninSubmit = e => {
         signInUser(signinData.email, signinData.password, location, history);
         e.preventDefault();
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history);
     }
 
     return (
@@ -68,6 +71,9 @@ const SignIn = () => {
                                 <Link className="btn text-main p-0" to="signup">Register Here!</Link>
                             </div>
                         </form>
+                        <div className="mt-4">
+                            <button className="btn btn-outline-main" onClick={handleGoogleSignIn}>Sign In With Google</button>
+                        </div>
                     </div>
                 </div>
             </div>

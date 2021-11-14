@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import initializeFirebase from "../pages/Login/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import axios from "axios";
 
 
 //initialize firebase app
@@ -12,6 +13,7 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
 
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
 
     const signUpUser = (name, email, password, history) => {
         setIsLoading(true);
@@ -20,7 +22,12 @@ const useFirebase = () => {
                 setAuthError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
-                saveUser(email, name, false);
+
+                // saving new user to database
+                const saveUser = { email: email, name: name };
+                axios.put("https://serene-badlands-47415.herokuapp.com/users", saveUser)
+                    .then()
+
                 //send name to firebase after registration
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -51,6 +58,25 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    const signInWithGoogle = (location, history) => {
+        setIsLoading(true);
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                const destination = location.state?.from || '/';
+                history.replace(destination);
+                setAuthError('');
+
+                // saving new user to database\
+                const newUser = result.user;
+                const saveUser = { email: newUser.email, name: newUser.displayName };
+                axios.put("https://serene-badlands-47415.herokuapp.com/users", saveUser)
+                    .then()
+            }).catch((error) => {
+                setAuthError(error.message);
+            })
+            .finally(() => setIsLoading(false));
+    }
+
     //observe user state
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -74,35 +100,19 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const saveUser = (email, name, role) => {
-        const user = { email, name, role };
-        fetch("https://serene-badlands-47415.herokuapp.com/users", {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then(
-                // response
-            )
-    }
-
-    const [admin, setAdmin] = useState({});
-
+    const [status, setStatus] = useState(false);
     useEffect(() => {
-        fetch(`https://serene-badlands-47415.herokuapp.com/users?email=${user?.email}`)
+        fetch(`https://serene-badlands-47415.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
-            .then(data => setAdmin(data))
-    }, []);
-
-    const isAdmin = admin;
+            .then(data => setStatus(data))
+    }, [user.email]);
 
     return {
         user,
-        isAdmin,
+        status,
         signUpUser,
         signInUser,
+        signInWithGoogle,
         signOutUser,
         isLoading,
         authError

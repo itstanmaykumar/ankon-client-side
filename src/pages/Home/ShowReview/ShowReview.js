@@ -18,7 +18,7 @@ const ShowReview = () => {
                     <div className="carousel-indicators">
                         {
                             reviews.map((review) => (
-                                <button key={review._id} type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={review.id} className={review.cls} aria-current="true" aria-label={`Slide ${review.id + 1}`}></button>
+                                <button key={review._id} type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={review.id} className={review.id === 0 ? "active" : ""} aria-current="true" aria-label={`Slide ${review.id + 1}`}></button>
                             ))
                         }
                     </div>

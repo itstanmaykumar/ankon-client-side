@@ -14,6 +14,9 @@ import PaintingDetails from './pages/Gallery/PaintingDetails/PaintingDetails';
 import Pay from './pages/Dashboard/Pay/Pay';
 import MyOrders from './pages/Dashboard/MyOrders/MyOrders';
 import Review from './pages/Dashboard/Review/Review';
+import ManageOrders from './pages/Dashboard/ManageOrders/ManageOrders';
+import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
+import AddPainting from './pages/Dashboard/AddPainting/AddPainting';
 import MakeAdmin from './pages/Dashboard/MakeAdmin/MakeAdmin';
 import AdminRoute from './pages/Login/AdminRoute/AdminRoute';
 
@@ -48,6 +51,18 @@ function App() {
             <PrivateRoute exact path="/review">
               <Review></Review>
             </PrivateRoute>
+
+            <AdminRoute exact path="/allorders">
+              <ManageOrders></ManageOrders>
+            </AdminRoute>
+
+            <AdminRoute exact path="/allpaintings">
+              <ManageProducts></ManageProducts>
+            </AdminRoute>
+
+            <AdminRoute exact path="/addpainting">
+              <AddPainting></AddPainting>
+            </AdminRoute>
 
             <AdminRoute exact path="/mkadmin">
               <MakeAdmin></MakeAdmin>

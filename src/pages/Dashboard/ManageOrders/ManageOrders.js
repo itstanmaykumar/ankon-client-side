@@ -3,14 +3,29 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import DashNav from '../DashNav/DashNav';
 
-const MyOrders = () => {
+const ManageOrders = () => {
     const { user } = useAuth();
+
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`https://serene-badlands-47415.herokuapp.com/orders?email=${user.email}`)
+        fetch(`https://serene-badlands-47415.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user.email]);
+
+    const updateStatus = (id) => {
+        const url = `https://serene-badlands-47415.herokuapp.com/orders/${id}`
+        axios.put(url)
+            .then(res => {
+                if (res.data.modifiedCount) {
+                    alert('Order is delivered!!!');
+                    // fetching API data again to refresh
+                    fetch("https://serene-badlands-47415.herokuapp.com/orders")
+                        .then(res => res.json())
+                        .then(data => setOrders(data));
+                }
+            })
+    }
 
     const cancelOrder = id => {
         const proceed = window.confirm("Are you sure , you want to delete this order?");
@@ -26,12 +41,11 @@ const MyOrders = () => {
                 })
         }
     }
-
     return (
         <div className="container">
-            <div className="row">
+            <div className="row container">
                 <DashNav></DashNav>
-                <div className="col-lg-8">
+                <div className="col-lg-8 col-12">
                     <div className="m-3 py-2 bg-dark-pro container rounded-10">
                         {
                             orders.length === 0 ?
@@ -41,10 +55,10 @@ const MyOrders = () => {
                                 :
                                 (
                                     <table className="table text-light">
-                                        <thead className="text-main">
+                                        <thead className="text-second">
                                             <tr>
                                                 <th>Title</th>
-                                                <th>Price</th>
+                                                <th>Name</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
@@ -54,19 +68,19 @@ const MyOrders = () => {
                                                 orders.map((order) => (
                                                     <tr key={order._id}>
                                                         <td>{order.title}</td>
-                                                        <td>${order.price}</td>
+                                                        <td>{order.name}</td>
                                                         {
                                                             (order.status) ?
                                                                 (
 
-                                                                    <td><i className="fas fa-truck pe-1"></i>Shipped</td>
+                                                                    <td className="text-success">Shipped</td>
                                                                 )
                                                                 :
                                                                 (
-                                                                    <td><i className="fas fa-hourglass-half pe-1"></i>Pending</td>
+                                                                    <td><span className="pointer text-main" onClick={() => updateStatus(order._id)}>Pending</span></td>
                                                                 )
                                                         }
-                                                        <td onClick={() => cancelOrder(order._id)} className="pointer ico text-danger">Cancel</td>
+                                                        <td onClick={() => cancelOrder(order._id)} className="pointer ico text-danger">Delete</td>
                                                     </tr>
                                                 ))
                                             }
@@ -81,4 +95,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ManageOrders;

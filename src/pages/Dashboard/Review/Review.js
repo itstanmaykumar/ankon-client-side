@@ -15,7 +15,7 @@ const Review = () => {
 
     const img = user.photoURL ? user.photoURL : "https://i.ibb.co/42LvjMx/default.png";
     const id = reviews.length;
-    console.log(id);
+    // console.log(id);
     const refFeed = useRef();
     const refRate = useRef();
     const history = useHistory();
@@ -44,7 +44,7 @@ const Review = () => {
         <div className="container">
             <div className="row">
                 <DashNav></DashNav>
-                <div className="col-lg-9">
+                <div className="col-lg-8">
                     <div className="ms-lg-3 mt-lg-3 container">
                         <form onSubmit={handleBooking} className="px-5 pt-3 pb-5 bg-dark-pro rounded-10 shadow-lg">
                             <h3 className="mt-4 mb-0 text-main">Provide Us About Your Feedback</h3>
@@ -59,7 +59,7 @@ const Review = () => {
                             </div>
                             <div className="my-4">
                                 <label htmlFor="add" className="form-label text-main">Your Feedback</label>
-                                <textarea maxlength="200" ref={refFeed} type="text" className="form-control" id="add" placeholder="Write Something Here... (in 200 character or less)" required />
+                                <textarea maxLength="200" ref={refFeed} type="text" className="form-control" id="add" placeholder="Write Something Here... (in 200 character or less)" required />
                             </div>
                             <div className="my-4">
                                 <label htmlFor="cNum" className="form-label text-main">Give Us A Rating</label>

@@ -15,7 +15,6 @@ const SignUp = () => {
         const newSignupData = { ...signupData };
         newSignupData[field] = value;
         setSignupData(newSignupData);
-        console.log(newSignupData);
     }
 
     const handleSignupSubmit = e => {
@@ -34,7 +33,7 @@ const SignUp = () => {
                             <h3 className="text-white mb-3">Fill Up This Form!</h3>
                             <div className="mb-3">
                                 <label htmlFor="name" className="form-label text-main">Full Name</label>
-                                <input type="text" name="name" onBlur={handleOnBlur} className="form-control" id="email" aria-describedby="emailHelp" required />
+                                <input type="text" name="name" onBlur={handleOnBlur} className="form-control" id="name" aria-describedby="emailHelp" required />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label text-main">Email address</label>

@@ -30,7 +30,7 @@ const MakeAdmin = () => {
         <div className="container">
             <div className="row">
                 <DashNav></DashNav>
-                <div className="col-lg-9">
+                <div className="col-lg-8">
                     <div className="ms-lg-3 mt-lg-3 container">
                         <div className="px-5 pt-3 pb-5 bg-dark-pro rounded-10 shadow-lg text-white">
                             <h1>Make An admin</h1>

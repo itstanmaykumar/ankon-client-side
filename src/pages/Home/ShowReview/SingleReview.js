@@ -1,12 +1,17 @@
 import React from 'react';
 
 const SingleReview = (props) => {
-    const { img, name, feed, rate, cls } = props.review;
+    const { id, img, name, feed, rate } = props.review;
 
     const restRate = 5 - rate;
 
+    let activeClass = "";
+    if (id === 0) {
+        activeClass = "active";
+    }
+
     return (
-        <div className={`carousel-item ${cls}`} data-bs-interval="2000">
+        <div className={`carousel-item ${activeClass}`} data-bs-interval="2000">
             <div className="my-5 text-center text-white mh-5 d-flex flex-column justify-content-between">
                 <div className="text-center pt-4">
                     <div className="mb-4">
