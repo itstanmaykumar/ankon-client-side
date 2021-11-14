@@ -1,10 +1,11 @@
 # ankon Project Documentation
 
+Project Name: ANKON
 Live Site Link: https://ankon-e942d.web.app/
 
 ## Project Description in Brief
 
-It's a website where you find diffrent package paintings which you can buy.
+It's a website where you find diffrent reproduced paintings which you can buy.
 
 
 
