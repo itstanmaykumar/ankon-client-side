@@ -6,11 +6,13 @@ import ShowReview from '../ShowReview/ShowReview';
 
 const Home = () => {
     return (
-        <div className="container">
-            <Banner></Banner>
-            <BestSellers></BestSellers>
-            <Info></Info>
-            <ShowReview></ShowReview>
+        <div className="of-x-h">
+            <div className="container">
+                <Banner></Banner>
+                <BestSellers></BestSellers>
+                <Info></Info>
+                <ShowReview></ShowReview>
+            </div>
         </div>
     );
 };

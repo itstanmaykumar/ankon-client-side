@@ -102,7 +102,7 @@ const PaintingDetails = () => {
                             <label htmlFor="cNum" className="form-label text-main">Your Cell Number</label>
                             <input ref={refCell} type="text" className="form-control" id="cNum" placeholder="+8801711-xxxxxx" required />
                         </div>
-                        <button type="submit" className="mt-4 btn btn-main box"><i className="fas fa-shopping-cart pe-2"></i> Buy Now</button>
+                        <button type="submit" className="mt-4 btn btn-main box"><i className="fas fa-shopping-cart pe-2"></i> Place Order</button>
                     </form>
                 </div>
             </div>

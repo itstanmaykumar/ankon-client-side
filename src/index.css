@@ -83,3 +83,6 @@ code {
 .mh-5{
   min-height: 500px;
 }
+.of-x-h{
+  overflow-x: hidden
+}
